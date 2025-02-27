@@ -4,6 +4,7 @@
  *
  */
 
+#include "ruby/version.h"
 #include "pg.h"
 
 /* Number of bytes that are reserved on the stack for query params. */
@@ -3684,12 +3685,22 @@ pgconn_set_client_encoding_async1( VALUE args )
 }
 
 
+#if defined(RUBY_API_VERSION_MAJOR) && (RUBY_API_VERSION_MAJOR > 2 || (RUBY_API_VERSION_MAJOR == 2 && RUBY_API_VERSION_MINOR >= 7))
+static VALUE
+pgconn_set_client_encoding_async2( VALUE arg, VALUE arg2 )
+{
+	UNUSED(arg);
+	UNUSED(arg2);
+	return 1;
+}
+#else
 static VALUE
 pgconn_set_client_encoding_async2( VALUE arg )
 {
 	UNUSED(arg);
 	return 1;
 }
+#endif
 
 
 static VALUE
