@@ -1,10 +1,10 @@
 # -*- encoding: utf-8 -*-
-# stub: pg 0.21.0.pre20170612111428 ruby lib
+# stub: pg 0.21.0 ruby lib
 # stub: ext/extconf.rb
 
 Gem::Specification.new do |s|
   s.name = "pg".freeze
-  s.version = "0.21.0.pre20170612111428"
+  s.version = "0.21.0"
 
   s.required_rubygems_version = Gem::Requirement.new("> 1.3.1".freeze) if s.respond_to? :required_rubygems_version=
   s.require_paths = ["lib".freeze]
